@@ -1,0 +1,40 @@
+/* Container to ensure full viewport height and prevent overflow */
+
+
+/* Styling for the background image in each section */
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Slight opacity to ensure content readability */
+  z-index: -1; /* Ensures the image is behind content */
+}
+
+/* Container for form content */
+.login-content {
+  position: relative;
+  padding: 20px;
+}
+
+/* Styling for the form container with reduced width and transparent background */
+.form-container {
+  max-width: 500px; /* Reduced max-width for the form */
+  background: rgba(10, 10, 10, 0.411); /* Semi-transparent background */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+}
+
+.form-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.493);
+}
+
+/* Ensure sections are displayed without any space between them */
+.login-section {
+  position: relative;
+  padding: 20px;
+  margin-bottom: 0; /* Remove bottom margin to eliminate space */
+}

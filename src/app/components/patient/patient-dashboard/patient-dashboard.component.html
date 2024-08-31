@@ -1,0 +1,65 @@
+<div class="patient-dashboard">
+    <!-- First Section: Patient Dashboard Information -->
+    <div class="section-one d-flex align-items-center justify-content-center">
+        <img src="/assets/images/d2.jpg" alt="Background Image" class="background-image img-fluid">
+
+        <div class="content text-center">
+            <h1 class="text-light welcome">Welcome To Patient Dashboard</h1>
+
+            <p class="text-light mt-3  welcome">
+                Manage your healthcare seamlessly. Access your profile, view appointments, and search for the best doctors all in one place.
+            </p>
+
+            <div class="d-flex justify-content-center align-items-center profile-section mt-4">
+                <h5 class="mb-0">
+                    <a routerLink="/profile" class="btn btn-primary">{{patient.firstName}} {{patient.lastName}}</a>
+                </h5>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Section: All Appointments and Search Doctor -->
+    <div class="section-two d-flex align-items-center justify-content-center">
+        <img src="/assets/images/patient4.jpg" alt="Background Image" class="background-image img-fluid">
+
+        <div class="content container">
+            <div class="row">
+                <!-- Search Doctor Section -->
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title">Find Your Doctor</h3>
+                            <p class="card-text">Search for doctors by name, specialization, or department. Easily find the right doctor for your needs.</p>
+                            <div class="d-flex mb-3">
+                                <form (ngSubmit)="searchDoctor()" #searchDoctorForm="ngForm" class="flex-grow-1">
+                                    <input type="text" autocomplete="off" class="form-control" name="search" [(ngModel)]="search" (input)="searchDoctor()" placeholder="Search Doctor/Name/Specialization/Department" style="color: lightgray;">
+                                </form>
+                                <button type="button" class="btn btn-light ms-2" (click)="allDoctors()">All Doctors</button>
+                            </div>
+                            <ul class="list-group">
+                                <li *ngFor="let doctor of doctorList | slice:0:5" class="list-group-item list">
+                                    <a [routerLink]="['/doctor-info', doctor.doctorId]" class="list-group-item-action list">
+                                        Dr. {{doctor.firstName}} {{doctor.lastName}} ({{doctor.specialization}}) ({{doctor.departmentInfo.departmentName}})
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- All Appointments Section -->
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title">Manage Your Appointments</h3>
+                            <p class="card-text">View and manage all your upcoming and past appointments. Stay on top of your healthcare schedule.</p>
+                            <div class="d-flex justify-content-center">
+                                <a routerLink="/all-appointments" class="btn btn-light">View All Appointments</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

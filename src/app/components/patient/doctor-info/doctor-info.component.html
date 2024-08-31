@@ -1,0 +1,50 @@
+<div class="doctor-info-container">
+  <img src="/assets/images/patient1.jpg" alt="Background Image" class="background-image">
+  <div class="container mt-3">
+    <div class="row justify-content-center">
+      <div class="col-md-7">
+        <!-- Doctor Information Card -->
+        <div class="card shadow-lg">
+          <div class="card-header bg-success text-white text-center">
+            <h5 class="card-title mb-0 p-2">Doctor Information</h5>
+          </div>
+          <div class="card-body">
+            <!-- Doctor’s Name and Specialization -->
+            <div class="row mb-4">
+              <div class="col-md-12">
+                <h3 class="text-center mb-2">Dr. {{doctor.firstName}} {{doctor.lastName}}</h3>
+                <p class="text-center"><strong>Specialization:</strong> {{doctor.specialization}}</p>
+              </div>
+            </div>
+            <!-- Email and Department Information -->
+            <div class="row">
+              <div class="col-md-12">
+                <h6 class="font-weight-bold">Email:</h6>
+                <p>{{doctor.email}}</p>
+              </div>
+              <hr class="text-success">
+              <div *ngIf="doctor?.departmentInfo?.hospitalInfo" class="col-md-12 mt-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h6 class="font-weight-bold">Department Information:</h6>
+                    <p><strong>Department:</strong> {{doctor.departmentInfo.departmentName}}</p>
+                    <p><strong>Hospital:</strong> {{doctor.departmentInfo.hospitalInfo.hospitalName}}</p>
+                    <p><strong>State:</strong> {{doctor.departmentInfo.hospitalInfo.state}}</p>
+                    <p><strong>Zip Code:</strong> {{doctor.departmentInfo.hospitalInfo.zipCode}}</p>
+                    <p><strong>Phone Number:</strong> {{doctor.departmentInfo.hospitalInfo.phoneNumber}}</p>
+                  </div>
+                  <!-- Availability and Button -->
+                  <div style="margin-right: 40px;">
+                    <h5 class="text-success mb-3 text-center">Available</h5> <!-- Availability message -->
+                    <button class="btn btn-success text-center" (click)="doctorApointmet(doctor.doctorId)">Book Appointment</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

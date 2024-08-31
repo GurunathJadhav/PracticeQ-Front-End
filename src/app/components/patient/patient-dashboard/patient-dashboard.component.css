@@ -1,0 +1,48 @@
+.patient-dashboard .section-one,
+.patient-dashboard .section-two {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.patient-dashboard .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.patient-dashboard .content {
+    position: relative;
+    z-index: 2;
+}
+
+.patient-dashboard .profile-section {
+    margin-top: 20px; /* Adjust if needed */
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.8); /* Make the card background semi-transparent */
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.card-text {
+    margin-bottom: 20px;
+}
+
+.welcome{
+    font-weight: bold;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.473);
+}
+
+.list{
+    text-decoration: none;
+}

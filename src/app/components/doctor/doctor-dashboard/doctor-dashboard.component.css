@@ -1,0 +1,85 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .profile-btn {
+    background-color: rgba(0, 123, 255, 0.8); /* Background color with some transparency */
+    border: none; /* Remove button border */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding inside the button */
+    border-radius: 5px; /* Rounded corners */
+  }
+
+  .profile-btn:hover {
+    background-color: rgba(0, 123, 255, 1); /* Solid background color on hover */
+  }
+
+  .profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .full-page-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+  }
+
+  .full-page-section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .content-overlay {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+  }
+
+  .second-section {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    width: 100%;   /* Full viewport width */
+    margin: 0;     /* Remove any default margin */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+  }
+
+  .second-section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+     /* Adjust the opacity for better readability */
+  }
+
+  .second-section-content {
+    position: relative;
+    z-index: 1;
+    color: #333;
+    width: 100%;
+    max-width: 1200px; /* Optional: limit the width for better layout */
+    padding: 20px; /* Optional: padding for spacing */
+    text-align: center; /* Center the text */
+  }
+
+  .welcome{
+    font-weight: bold;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.555);
+  }

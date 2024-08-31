@@ -1,0 +1,75 @@
+<div class="login-container">
+  <!-- Patient Login Section -->
+  <section class="login-section">
+    <img src="/assets/images/patient1.jpg" alt="Patient Login Background" class="background-image">
+    <div class="login-content container mt-3">
+      <div class="p-4 mb-3 rounded mx-auto form-container">
+        <h4 class="text-center">Patient Login</h4>
+        <p class="text-center">As a patient, you can access your personal health information, book appointments, and view your medical history.</p>
+        <form (ngSubmit)="patientLogin()" #patientLoginForm="ngForm">
+          <div class="mb-2 form-group">
+            <label>Username</label>
+            <input type="text" class="form-control" name="username" [(ngModel)]="patientLoginDto.username"
+              #username="ngModel" required placeholder="Enter username">
+          </div>
+          <div class="mb-2 form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" name="password" [(ngModel)]="patientLoginDto.password"
+              placeholder="Enter password" required #password="ngModel">
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary text-center" [disabled]="patientLoginForm.invalid">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Doctor Login Section -->
+  <section class="login-section">
+    <img src="/assets/images/doctor.jpg" alt="Doctor Login Background" class="background-image">
+    <div class="login-content container mt-3">
+      <div class="p-4 mb-3 rounded mx-auto form-container">
+        <h4 class="text-center">Doctor Login</h4>
+        <p class="text-center">Doctors can access patient records, manage appointments, and update treatment plans. Keep your login credentials confidential.</p>
+        <form (ngSubmit)="doctorLogin()" #doctorLoginForm="ngForm">
+          <div class="mb-2 form-group">
+            <label>Username</label>
+            <input type="text" class="form-control" name="username" required #username="ngModel" [(ngModel)]="doctorLoginDto.username" required placeholder="Enter Username">
+          </div>
+          <div class="mb-2 form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" name="password" #password="ngModel" required [(ngModel)]="doctorLoginDto.password" required placeholder="Enter Password">
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary text-center"  [disabled]="doctorLoginForm.invalid">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Admin Login Section -->
+  <section class="login-section">
+    <img src="/assets/images/hospital1.jpg" alt="Admin Login Background" class="background-image">
+    <div class="login-content container mt-3">
+      <div class="p-4 mb-3  rounded mx-auto form-container">
+        <h4 class="text-center">Admin Login</h4>
+        <p class="text-center">Admins can manage user accounts, oversee appointments, and maintain hospital records. Ensure your credentials are secure.</p>
+        <form (ngSubmit)="adminLogin()" #adminLoginForm="ngForm">
+          <div class="mb-2 form-group">
+            <label>Username</label>
+            <input type="text" class="form-control" name="username" required placeholder="Enter Username">
+          </div>
+          <div class="mb-2 form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" name="password" required placeholder="Enter Password">
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary text-center">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>

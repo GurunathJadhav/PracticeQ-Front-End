@@ -1,0 +1,40 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow-lg">
+        <div class="card-body">
+          <h3 class="card-title text-center mb-4">{{ doctor.firstName }} {{ doctor.lastName }}</h3>
+          <h5 class="text-muted text-center mb-4">{{ doctor.specialization }}</h5>
+          <div class="row">
+            <div class="col-md-6">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <strong>Email:</strong> {{ doctor.email }}
+                </li>
+                <li class="list-group-item">
+                  <strong>Department:</strong> {{ doctor.departmentInfo.departmentName }}
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <strong>Hospital:</strong> {{ doctor.departmentInfo.hospitalInfo.hospitalName }}
+                </li>
+                <li class="list-group-item">
+                  <strong>State:</strong> {{ doctor.departmentInfo.hospitalInfo.state }}
+                </li>
+                <li class="list-group-item">
+                  <strong>Zip Code:</strong> {{ doctor.departmentInfo.hospitalInfo.zipCode }}
+                </li>
+                <li class="list-group-item">
+                  <strong>Phone Number:</strong> {{ doctor.departmentInfo.hospitalInfo.phoneNumber }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

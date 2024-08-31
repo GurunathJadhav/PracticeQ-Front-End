@@ -1,0 +1,60 @@
+<div class="appointment-background">
+    <!-- First Div: Information about Appointments Page -->
+    <div class="info-div">
+        <div class="info-background">
+            <img src="/assets/images/appointment.jpg" alt="Information Background" class="background-img">
+        </div>
+        <div class="info-content text-center text-white">
+            <h1>Welcome to the Appointments Section</h1>
+            <p>Here you can view and manage all your upcoming and past appointments.</p>
+            <p>Navigate through the list below to get detailed information about each appointment.</p>
+        </div>
+    </div>
+
+    <!-- Second Div: Appointment Container -->
+    <div class="appointments-div position-relative">
+        <div class="appointments-background">
+            <img src="/assets/images/doctor.jpg" alt="Appointments Background" class="background-img">
+        </div>
+
+        <div class="appointment-container container mt-5 position-relative">
+            <!-- Emergency Checkbox Positioned in the Right Corner of Second Div -->
+            <div class="form-check position-absolute bg-light" style="top: 0; right: 0; padding: 3px; color: black; border-radius: 4px;">
+                <input type="checkbox" 
+                       name="isEmergency" 
+                       [(ngModel)]="isEmergency" 
+                       class="form-check-input" 
+                       id="emergencyCheck"
+                       (change)="handleEmergencyChange()">
+                <label class="form-check-label" for="emergencyCheck">Emergency</label>
+            </div>
+
+            <!-- Appointment Details Section -->
+            <section class="appointments-list mb-5">
+                <div *ngFor="let appointment of allAppointments.appointmentForDoctor" 
+                     class="card mb-4 shadow-sm border-light" style="max-width: 60%; margin-left: 0;">
+                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                        <h4 class="mb-0">Appointment Details</h4>
+                        <span class="badge badge-light text-primary">{{ appointment.date }}</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="card-text"><strong>Date:</strong> {{ appointment.date }}</p>
+                                <p class="card-text"><strong>Time:</strong> {{ appointment.time }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="card-text"><strong>Patient Name:</strong> {{ appointment.patientDto.firstName }} {{ appointment.patientDto.lastName }}</p>
+                                <p class="card-text"><strong>Emergency:</strong> {{ appointment.emergency ? 'Yes' : 'No' }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-end bg-light">
+                        <!-- Appoint Button -->
+                        <button class="btn btn-success" (click)="appoint(appointment.appId)">Appoint</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

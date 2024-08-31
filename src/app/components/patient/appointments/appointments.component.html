@@ -1,0 +1,69 @@
+<div class="container mt-5">
+  <!-- Patient Information Section -->
+  <div class="row mb-5">
+    <div class="col-md-12">
+      <div class="card shadow-sm">
+        <div class="card-header bg-info text-white">
+          <h3 class="mb-0">Patient Information</h3>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4">
+              <p><strong>First Name:</strong> {{ appointments.firstName }}</p>
+            </div>
+            <div class="col-md-4">
+              <p><strong>Last Name:</strong> {{ appointments.lastName }}</p>
+            </div>
+            <div class="col-md-4">
+              <p><strong>Email:</strong> {{ appointments.email }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Appointments List Section -->
+  <div class="card shadow-lg mb-5">
+    <div class="card-header bg-secondary text-white d-flex justify-content-between align-items-center">
+      <h3 class="mb-0">Appointments</h3>
+      <form (ngSubmit)="searcheApp()" class="input-group" style="max-width: 300px;" #searchAppForm="ngForm">
+        <input 
+          type="text" 
+          class="form-control" 
+          [(ngModel)]="searchAppointment" 
+          name="searchAppointment" 
+          (input)="searcheApp()" 
+          placeholder="Search Appointments"
+          autocomplete="off">
+      
+      </form>
+    </div>
+    <div class="card-body">
+      <div *ngFor="let appointment of appointments.patientAppointmentsList" class="card mb-4 border-light shadow-sm">
+        <div class="row g-0">
+          <!-- Appointment Details -->
+          <div class="col-md-6 p-3 bg-light">
+            <h5 class="card-title text-primary"><strong>ID:</strong> {{ appointment.appId }}</h5>
+            <p><strong>Date:</strong> {{ appointment.date }}</p>
+            <p><strong>Time:</strong> {{ appointment.time }}</p>
+            <p><strong>Reason:</strong> {{ appointment.reason }}</p>
+            <p><strong>Emergency:</strong> 
+              <span class="badge bg-danger">{{ appointment.emergency ? 'Yes' : 'No' }}</span>
+            </p>
+          </div>
+          <!-- Doctor Details -->
+          <div class="col-md-6 p-3">
+            <h5 class="card-title text-secondary"><strong>Doctor:</strong> Dr. {{ appointment.doctor.firstName }} {{ appointment.doctor.lastName }}</h5>
+            <p><strong>Specialization:</strong> {{ appointment.doctor.specialization }}</p>
+            <p><strong>Department:</strong> {{ appointment.doctor.departmentInfo.departmentName }}</p>
+          </div>
+        </div>
+        <div class="card-footer bg-white text-end">
+          <button class="btn btn-primary me-2" (click)="updateAppointment(appointment.appId)">Update</button>
+          <button class="btn btn-danger" (click)="deleteAppointment(appointment.appId)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

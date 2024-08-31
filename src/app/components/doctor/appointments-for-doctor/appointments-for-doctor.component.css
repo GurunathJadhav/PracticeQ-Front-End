@@ -1,0 +1,89 @@
+/* General reset for margin and padding */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* First Div: Full Page Background Image and Centered Content */
+.info-div {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide anything outside the div */
+}
+
+.info-background .background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire section */
+    z-index: -1; /* Place image behind the content */
+}
+
+.info-content {
+    
+    
+    z-index: 1; /* Ensure content is on top of the background image */
+    padding: 2rem;
+    margin-top: 12rem;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.384);
+    font-weight: bold;
+   /* Optional: Adds a semi-transparent background to the content for better readability */
+}
+
+/* Second Div: Fixed Background Image with Scrollable Content */
+.appointments-div {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 100px); /* Adjust the height to keep it stable */
+    overflow: hidden; /* Hide overflow from the background image */
+}
+
+.appointments-background {
+    position: absolute; /* Absolute positioning within the div */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Hide anything outside the div */
+}
+
+.appointments-background .background-img {
+    position: absolute; /* Keep the image fixed within the div */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire section */
+    z-index: -1; /* Place image behind the content */
+}
+
+.appointment-container {
+    position: relative;
+    z-index: 1; /* Ensure content is on top of the background image */
+    padding: 2rem;
+    background: transparent; /* Semi-transparent background for contrast */
+    height: 100%; /* Full height to fill the parent div */
+    overflow-y: scroll; /* Allow scrolling if content overflows */
+    border: none;
+}
+
+/* Hide scroll bars */
+.appointment-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for WebKit browsers */
+}
+
+.appointment-container {
+    -ms-overflow-style: none;  /* Hide scrollbar for Internet Explorer and Edge */
+    scrollbar-width: none;  /* Hide scrollbar for Firefox */
+}
+
+/* Ensuring no extra margin or padding between sections */
+.appointment-background > div {
+    margin: 0;
+    padding: 0;
+}

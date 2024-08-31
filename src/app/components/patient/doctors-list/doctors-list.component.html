@@ -1,0 +1,33 @@
+<div class="outer-container">
+  <div *ngFor="let department of departmentGroups" class="department-section mb-5">
+    <div class="department-header position-relative text-center">
+      <img [src]="department.backgroundImage" alt="Department Background" class="img-fluid w-100 department-background">
+      <div class="department-overlay">
+        <h2 class="department-title p-3">
+          {{ department.name }}
+        </h2>
+      </div>
+    </div>
+    <div class="inner-container container mt-4">
+      <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4" *ngFor="let doctor of department.doctors">
+          <a [routerLink]="['/doctor-info', doctor.doctorId]" class="text-decoration-none">
+            <div class="card shadow-sm doctor-card">
+              <div class="card-header bg-success text-white">
+                <h5 class="card-title mb-0">Dr. {{ doctor.firstName }} {{ doctor.lastName }}</h5>
+              </div>
+              <div class="card-body">
+                <p class="card-text"><strong>Specialization:</strong> {{ doctor.specialization }}</p>
+                <p class="card-text"><strong>Email:</strong> {{ doctor.email }}</p>
+                <p class="card-text"><strong>Department:</strong> {{ doctor.departmentInfo.departmentName }}</p>
+                <p class="card-text"><strong>Hospital:</strong> {{ doctor.departmentInfo.hospitalInfo.hospitalName }}</p>
+                <p class="card-text"><strong>Location:</strong> {{ doctor.departmentInfo.hospitalInfo.state }}, {{ doctor.departmentInfo.hospitalInfo.zipCode }}</p>
+                <p class="card-text"><strong>Contact:</strong> {{ doctor.departmentInfo.hospitalInfo.phoneNumber }}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="registration-container">
+    <!-- First Section: Registration Information -->
+    <section class="info-section">
+        <img src="/assets/images/patient1.jpg" alt="Information Background" class="background-image">
+        <div class="info-content text-white text-center">
+            <h4>Why Register with Us?</h4>
+            <p>
+                By registering as a patient, you gain access to a range of healthcare services tailored to your needs. 
+                Our online portal allows you to schedule appointments, access medical records, and receive personalized health updates.
+            </p>
+            <p>
+                Registering also helps our healthcare team provide you with more personalized care by keeping your medical history and information up to date.
+            </p>
+            <p>
+                Additionally, you'll receive exclusive access to our health newsletters, updates on new services, and priority scheduling for appointments.
+            </p>
+        </div>
+    </section>
+
+    <!-- Second Section: Registration Form -->
+    <section class="form-section">
+        <img src="/assets/images/doctor.jpg" alt="Form Background" class="background-image">
+        <div class="form-content container mt-5">
+            <div class="p-4 mb-2   form-container mx-auto" style="max-width: 600px;">
+                <h3 class="text-center">Patient Registration</h3>
+                <form (ngSubmit)="patientRegistration()" #patientRegistrationForm="ngForm">
+                    <div class="mb-2 form-group">
+                        <label>First Name</label>
+                        <input type="text" class="form-control" required #firstName="ngModel" name="firstName"
+                            [(ngModel)]="patient.firstName" placeholder="Enter first name">
+                    </div>
+                    <div class="mb-2 form-group">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" required #lastName="ngModel" name="lastName"
+                            [(ngModel)]="patient.lastName" placeholder="Enter last name">
+                    </div>
+                    <div class="mb-2 form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control" required #email="ngModel" name="email"
+                            [(ngModel)]="patient.email" placeholder="Enter email">
+                    </div>
+                    <div class="mb-2 form-group">
+                        <label>Mobile</label>
+                        <input type="text" class="form-control" required #mobile="ngModel" name="mobile"
+                            [(ngModel)]="patient.mobile" placeholder="Enter mobile no.">
+                    </div>
+                    <div class="mb-2 form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" required #password="ngModel" name="password"
+                            [(ngModel)]="patient.password" placeholder="Enter password">
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary text-center"
+                            [disabled]="patientRegistrationForm.invalid">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>

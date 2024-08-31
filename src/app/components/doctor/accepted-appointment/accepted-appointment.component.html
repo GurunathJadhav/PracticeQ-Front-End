@@ -1,0 +1,76 @@
+<!-- src/app/appointment-details/appointment-details.component.html -->
+<div class="container my-5 p-4 bg-light rounded shadow-sm">
+  <div class="row mb-4">
+    <div class="col-12 text-center">
+      <h2 class="text-primary">Appointment Overview</h2>
+      <hr class="w-25 mx-auto">
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Appointment Details -->
+    <div class="col-lg-6 mb-4">
+      <div class="card h-100 border-primary">
+        <div class="card-header bg-primary text-white text-center">
+          <h5>Appointment Details</h5>
+        </div>
+        <div class="card-body">
+          <div class="row mb-3">
+            <div class="col-4 fw-bold">Appointment ID:</div>
+            <div class="col-8">{{ accptedApp.appointments.appId }}</div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-4 fw-bold">Date:</div>
+            <div class="col-8">{{ accptedApp.appointments.date }}</div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-4 fw-bold">Time:</div>
+            <div class="col-8">{{ accptedApp.appointments.time }}</div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-4 fw-bold">Reason:</div>
+            <div class="col-8">{{ accptedApp.appointments.reason }}</div>
+          </div>
+          <div class="row">
+            <div class="col-4 fw-bold">Emergency:</div>
+            <div class="col-8">
+              <span [class.text-danger]="accptedApp.appointments.emergency">
+                {{ accptedApp.appointments.emergency ? 'Yes' : 'No' }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Patient Information -->
+    <div class="col-lg-6 mb-4">
+      <div class="card h-100 border-success">
+        <div class="card-header bg-success text-white text-center">
+          <h5>Patient Information</h5>
+        </div>
+        <div class="card-body">
+          <div class="row mb-3">
+            <div class="col-4 fw-bold">First Name:</div>
+            <div class="col-8">{{ accptedApp.appointments.patient.firstName }}</div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-4 fw-bold">Last Name:</div>
+            <div class="col-8">{{ accptedApp.appointments.patient.lastName }}</div>
+          </div>
+          <div class="row">
+            <div class="col-4 fw-bold">Mobile:</div>
+            <div class="col-8">{{ accptedApp.appointments.patient.mobile }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Create Prescription Button -->
+  <div class="row">
+    <div class="col-12 text-center mt-4">
+      <button class="btn btn-primary btn-lg" (click)="createPrescription()">Create Prescription</button>
+    </div>
+  </div>
+</div>

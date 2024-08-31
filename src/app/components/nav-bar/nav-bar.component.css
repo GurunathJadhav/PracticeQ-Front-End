@@ -1,0 +1,8 @@
+/* Optional: Adjust navbar brand and links for smaller screens */
+.navbar-brand {
+    font-size: 1.25rem;
+}
+
+.navbar-nav .nav-link {
+    padding: 0.5rem 1rem;
+}

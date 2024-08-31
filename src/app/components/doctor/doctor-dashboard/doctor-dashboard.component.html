@@ -1,0 +1,44 @@
+
+
+<div class="container-fluid p-0">
+  <!-- First Section with Background Image Covering Full Width -->
+  <div class="row no-gutters">
+    <div class="col-12">
+      <div class="full-page-section">
+        <img src="/assets/images/doctor2.jpg" alt="Doctor Dashboard Background">
+        <div class="profile-container content-overlay">
+          <h1 class="welcome">Welcome to the Doctor Dashboard</h1>
+          <p class="welcome">Manage your appointments, view patient records, and access your profile.</p>
+          <button class="btn profile-btn mt-3" routerLink="/doctor-profile">Dr. {{doctor.firstName}} {{doctor.lastName}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Second Section with Additional Information -->
+  <div class="second-section">
+    <img src="/assets/images/doctor.jpg" alt="Background for Second Section">
+    <div class="second-section-content">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card shadow-sm mb-4">
+            <div class="card-body">
+              <h4 class="card-title">Upcoming Appointments</h4>
+              <p class="card-text">View and manage your upcoming appointments.</p>
+              <button class="btn btn-outline-primary" routerLink="/appointments-for-doctor">View Appointments</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card shadow-sm mb-4">
+            <div class="card-body">
+              <h4 class="card-title">Patient Records</h4>
+              <p class="card-text">Access and update patient medical records.</p>
+              <button class="btn btn-outline-primary">View Records</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
